@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+/* Enable dark mode: handled via the 'dark' class (set `darkMode: 'class'` in tailwind.config.js) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+  transition: all;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -23,4 +36,73 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Hide default cursor only when custom cursor is active */
+html, body {
+  cursor: none;
+}
+
+/* Show default cursor for text inputs for better UX */
+input, textarea, select {
+  cursor: auto;
+}
+
+
+.text-gradient {
+  background: linear-gradient(to right, #ffd700, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(to right, #ffd700, #ff4500) border-box;
+}
+
+
+.white-glassmorphism {
+  background: rgba(46, 46, 46, 0.954);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(150, 149, 149, 0.955);
+}
+
+.black-glassmorphism {
+    background: rgba(0, 0, 0, 0.506);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.section-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;               /* Small circle */
+  height: 300px;
+  background: radial-gradient(circle, 
+    rgba(255, 0, 0, 0.5),     /* Red center */
+    rgba(255, 69, 0, 0.3),    /* Orange-red */
+    transparent 60%           /* Quick fade */
+  );
+  filter: blur(60px);         /* Heavy blur for soft glow */
+  z-index: 0;
+}
+
+.section-glow > * {
+  position: relative;
+  z-index: 1;
 }
