@@ -13,7 +13,7 @@ const Contact = () => {
 
     const handleCopyEmail = () => {
         // Copy email to clipboard
-        navigator.clipboard.writeText('hello@ahmadaljaziri.com')
+        navigator.clipboard.writeText('aahg@ahmadaljaziri.com')
         
         // Show the message
         setShowMessage(true)
@@ -32,7 +32,7 @@ const Contact = () => {
         <div className="flex flex-col gap-4 md:gap-5 md:flex-row w-full justify-center items-center lg:justify-between">
             <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2">
                 <p className="font-sans font-semibold text-zinc-900 dark:text-neutral-100 text-base flex flex-row items-center gap-1">
-                    <IoIosMail className="text-2xl"/> hello@ahmadaljaziri.com
+                    <IoIosMail className="text-2xl"/> aahg@ahmadaljaziri.com
                 </p>
                 <button 
                  className="bg-neutral-100 text-zinc-900 dark:text-neutral-100 dark:bg-zinc-900 border-2 p-2 px-3 text-sm font-semibold font-sans rounded-full flex flex-row gap-1 items-center hover:text-neutral-100 hover:bg-zinc-900 dark:hover:text-zinc-900 dark:hover:bg-neutral-100 transition-colors duration-300"
