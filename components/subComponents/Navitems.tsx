@@ -43,6 +43,7 @@ const Navitems = () => {
             {/* Mobile Hamburger - Premium Style */}
             <div className="md:hidden flex justify-end">
                 <button 
+                    title="Toggle menu"
                     onClick={() => setIsOpen(!isOpen)}
                     className="p-4 bg-black/80 dark:bg-white/80 backdrop-blur-md rounded-full shadow-2xl border border-white/10 dark:border-black/10 transition-all duration-300 hover:scale-110 fixed top-4 right-4 z-40"
                 >
@@ -76,7 +77,8 @@ const Navitems = () => {
                             {/* Close Button */}
                             <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/10 dark:border-black/10">
                                 <span className="text-white dark:text-black font-bold text-xl">Navigation</span>
-                                <button 
+                                <button
+                                    title="Toggle menu"
                                     onClick={() => setIsOpen(false)}
                                     className="p-2 text-white dark:text-black hover:bg-white/10 dark:hover:bg-black/10 rounded-full transition-colors"
                                 >
