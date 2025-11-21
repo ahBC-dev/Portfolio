@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react';
 import { FRONTEND, BACKEND, OTHERS } from '@/lib/constants';
 
 const TechStack = () => {
-    const [activeTab, setActiveTab] = useState<'Frontend' | 'Backend' | 'Others'>('Frontend');
+    const [activeTab, setActiveTab] = useState<'Frontend' | 'Backend' | 'Tools'>('Frontend');
     const currentSkills = activeTab === 'Frontend' ? FRONTEND : activeTab === 'Backend' ? BACKEND : OTHERS;
 
     // Animation variants
