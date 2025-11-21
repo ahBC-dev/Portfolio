@@ -9,9 +9,9 @@ const Projects = () => {
     
 
   return (
-    <div className="container flex flex-col p-3 gap-5">
+    <div className="container flex flex-col p-3 gap-5  z-10">
         <div className="text-center lg:text-start">
-            <h1 className="text-3xl font-serif text-zinc-900 dark:text-neutral-100">
+            <h1 className="text-3xl font-serif font-bold text-zinc-900 dark:text-neutral-100">
                 PROJECTS
             </h1>
         </div>

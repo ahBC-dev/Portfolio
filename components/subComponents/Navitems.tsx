@@ -5,73 +5,105 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { HiMenuAlt3 } from "react-icons/hi";
-import { LuPanelRightClose } from "react-icons/lu";
-
+import { RiMenu5Line } from "react-icons/ri";
+import { IoClose } from "react-icons/io5";
 
 const Navitems = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // Changed: Initialize with the current hash (will be empty on server)
 
-    //animation variants for framer motion
     const menuVariants = {
-        closed: { x: "100%", transition: { duration: 0.1 } },
-        open: { x: 0, transition: { duration: 0.2, staggerChildren: 0.1 } },
+        closed: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
+        open: { opacity: 1, scale: 1, transition: { duration: 0.3, staggerChildren: 0.1 } },
     };
 
     const itemVariants = {
-        closed: { opacity: 0, x: 20 },
-        open: { opacity: 1, x: 0 },
+        closed: { opacity: 0, y: 10 },
+        open: { opacity: 1, y: 0 },
     };
 
-
-  return (
-    <div>
-        {/*Desktop menu*/}
-        <ul className="hidden flex-row md:flex justify-between text-base font-light font-serif rounded-b-full backdrop-blur-xs bg-black/60 dark:bg-white/60 shadow-md">
-            {NAV_ITEMS.map(({href, label}) => (
-                <li key={href} className="">
-                    <Link href={href} className="block px-4 py-1 rounded-b-full text-neutral-100 dark:text-zinc-900 transition-colors duration-300 hover:text-amber-400">
-                        {label}
-                    </Link>
-                </li>
-            ))}
-        </ul>
-
-        {/*mobile hamburger icon*/}
-        <div className="md:hidden right-0 fixed top-15  bg-black/60 backdrop-blur-xs dark:bg-white/50 flex items-center rounded-l-lg transition-all duration-300 shadow-md">
-            <button className="p-1 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                <HiMenuAlt3 className="text-3xl md:text-4xl text-neutral-100 dark:text-black"/>
-            </button>
-        </div>
-        {/*Mobile menu*/}
-        <AnimatePresence>
-            {isOpen && (
-                <motion.ul className="md:hidden flex flex-col fixed top-15 right-0 p-5 gap-10 text-base font-serif font-semibold bg-black/60 backdrop-blur-xs dark:bg-white/50 rounded-l-xl transition-all duration-300 shadow-black drop-shadow-xl"
-                    variants={menuVariants}
-                    initial="closed"
-                    animate="open"
-                    exit="closed"
-                >
-                    <button className="text-2xl text-neutral-100 hover:text-amber-400 dark:text-black transition-all duration-300 text-center flex cursor-pointer" 
-                        onClick={() => setIsOpen(false)}>
-                    <LuPanelRightClose />
-                    </button>
-                    {NAV_ITEMS.map((item) => (
-                        <motion.li key={item.href} variants={itemVariants}>
-                            <Link href={item.href} className="text-neutral-100 hover:text-amber-400 dark:text-black transition-all duration-300"
-                                onClick={() => setIsOpen(false)} //when a navbar link is clicked, the mobile menu disappears
+    return (
+        <div className="w-full">
+            {/* Desktop Navigation - Keep current full width style */}
+            <div className="hidden md:flex items-center justify-center w-full">
+                <ul className="flex items-center justify-between w-full bg-black/80 dark:bg-white/80 backdrop-blur-md rounded-full px-8  shadow-2xl border border-white/10 dark:border-black/10">
+                    {NAV_ITEMS.map(({href, label}) => (
+                        <li key={href} className="flex-1 text-center">
+                            <Link 
+                                href={href} 
+                                className="relative px-4 py-2 text-white dark:text-black font-medium rounded-full transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/10 group block mx-auto w-fit"
                             >
-                                {item.label}
+                                <span className="relative z-10">{label}</span>
+                                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent dark:from-black/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
                             </Link>
-                            
-                        </motion.li>
+                        </li>
                     ))}
-                </motion.ul>
-            )}
-        </AnimatePresence>
-    </div>
-  )
+                </ul>
+            </div>
+
+            {/* Mobile Hamburger - Premium Style */}
+            <div className="md:hidden flex justify-end">
+                <button 
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="p-4 bg-black/80 dark:bg-white/80 backdrop-blur-md rounded-full shadow-2xl border border-white/10 dark:border-black/10 transition-all duration-300 hover:scale-110 fixed top-4 right-4 z-40"
+                >
+                    <RiMenu5Line className="text-2xl text-white dark:text-black" />
+                </button>
+            </div>
+
+            {/* Mobile Menu - Premium Style */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div 
+                        className="fixed inset-0 z-50 md:hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        {/* Backdrop */}
+                        <div 
+                            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                            onClick={() => setIsOpen(false)}
+                        />
+                        
+                        {/* Menu Panel - Centered on screen */}
+                        <motion.div 
+                            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/90 dark:bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 dark:border-black/10 p-8 w-[80vw] max-w-md"
+                            variants={menuVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                        >
+                            {/* Close Button */}
+                            <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/10 dark:border-black/10">
+                                <span className="text-white dark:text-black font-bold text-xl">Navigation</span>
+                                <button 
+                                    onClick={() => setIsOpen(false)}
+                                    className="p-2 text-white dark:text-black hover:bg-white/10 dark:hover:bg-black/10 rounded-full transition-colors"
+                                >
+                                    <IoClose className="text-3xl" />
+                                </button>
+                            </div>
+
+                            {/* Menu Items */}
+                            <ul className="space-y-4">
+                                {NAV_ITEMS.map((item) => (
+                                    <motion.li key={item.href} variants={itemVariants}>
+                                        <Link 
+                                            href={item.href} 
+                                            className="block px-6 py-4 text-white dark:text-black font-semibold font-sans text-xl rounded-xl hover:bg-white/10 dark:hover:bg-black/10 transition-all duration-300 border border-transparent hover:border-white/5 dark:hover:border-black/5 text-center"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    )
 }
 
 export default Navitems;
