@@ -61,7 +61,7 @@ const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive }: T
       className="relative z-10"
     >
       <Link
-        href={href}
+        href={href as string}
         onMouseEnter={() => {
           if (!ref?.current) return;
 
