@@ -12,7 +12,6 @@ import { FiChevronsDown } from "react-icons/fi";
 
 import { motion } from "framer-motion"
 import Contact from "@/components/Contact";
-import BgFlasher from "@/components/subComponents/BgFlasher";
 
 
 export default function Home() {
