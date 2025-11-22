@@ -1,4 +1,5 @@
 'use client'
+// disable eslint-disable react-hooks/rules-of-hooks
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { MdLightMode, MdDarkMode } from "react-icons/md";
@@ -12,7 +13,7 @@ export default function ThemeToggle() {
     opacity: 0,
   })
 
-  const buttonRef = useRef(null)
+  const buttonRef = useRef<HTMLLIElement | null>(null)
 
   useEffect(() => {
     setMounted(true)

@@ -43,9 +43,17 @@ const DesktopNav = () => {
     </div>
   );
 };
+interface TabProps {
+  children: React.ReactNode;
+  href?: string;
+  setPosition?: any;
+  index?: number;
+  setActiveIndex?: any;
+  isActive?: boolean;
+}
 
-const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive }) => {
-  const ref = useRef(null);
+const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive }: TabProps) => {
+  const ref = useRef<HTMLLIElement>(null);
 
   return (
     <li
@@ -78,7 +86,7 @@ const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive }) =
   );
 };
 
-const Cursor = ({ position }) => {
+const Cursor = ({ position }: { position: { left: number; width: number; opacity: number } }) => {
   return (
     <motion.li
       animate={{
