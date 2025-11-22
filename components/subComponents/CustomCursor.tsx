@@ -60,7 +60,7 @@ const CustomCursor = () => {
           ease: "easeOut"
         }}
       >
-        <div className="w-64 h-64 bg-gradient-to-r from-yellow-400 to-red-400 rounded-full blur-3xl" />
+        <div className="w-64 h-64 bg-gradient-to-r from-yellow-400 to-red-400 rounded-full blur-3xl cursor-blob" />
       </motion.div>
 
       {/* Main cursor - Your clean version */}

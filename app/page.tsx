@@ -7,13 +7,12 @@ import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
 
 import ScrollProgress from "@/components/subComponents/ScrollProgress";
-import FluidCornerShape from "@/components/subComponents/FluidCornerShape";
-import BlurOverlay from "@/components/subComponents/BlurOverlay";
 
 import { FiChevronsDown } from "react-icons/fi";
 
 import { motion } from "framer-motion"
 import Contact from "@/components/Contact";
+import BgFlasher from "@/components/subComponents/BgFlasher";
 
 
 export default function Home() {

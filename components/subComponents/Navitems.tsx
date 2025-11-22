@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { RiMenu5Line } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
+import DesktopNav from "./DesktopNav";
 
 const Navitems = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,21 +25,7 @@ const Navitems = () => {
     return (
         <div className="w-full">
             {/* Desktop Navigation - Keep current full width style */}
-            <div className="hidden md:flex items-center justify-center w-full">
-                <ul className="flex items-center justify-between w-full bg-black/80 dark:bg-white/80 backdrop-blur-md rounded-full px-8  shadow-2xl border border-white/10 dark:border-black/10">
-                    {NAV_ITEMS.map(({href, label}) => (
-                        <li key={href} className="flex-1 text-center">
-                            <Link 
-                                href={href} 
-                                className="relative px-4 py-2 text-white dark:text-black font-medium rounded-full transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/10 group block mx-auto w-fit"
-                            >
-                                <span className="relative z-10">{label}</span>
-                                <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent dark:from-black/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+           <DesktopNav />
 
             {/* Mobile Hamburger - Premium Style */}
             <div className="md:hidden flex justify-end">

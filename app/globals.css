@@ -80,58 +80,8 @@ input, textarea, select {
 }
 
 
-.section-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-glow::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;               /* Small circle */
-  height: 300px;
-  background: radial-gradient(circle, 
-    rgba(255, 0, 0, 0.5),     /* Red center */
-    rgba(255, 69, 0, 0.3),    /* Orange-red */
-    transparent 60%           /* Quick fade */
-  );
-  filter: blur(60px);         /* Heavy blur for soft glow */
-  z-index: 0;
-}
-
-.section-glow > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-/*--------------------- 
-  about section animations 
-  ------------------------ */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-.animate-float-slow {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-medium {
-  animation: float 4s ease-in-out infinite;
-}
-
-.animate-float-fast {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.blur-3xl[class*="w-64"]:not(.cursor-blob),
+.blur-3xl[class*="w-96"],
+.blur-2xl[class*="w-80"] {
+  display: none !important;
 }
