@@ -18,7 +18,7 @@ export const FRONTEND = [
     {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
     {name: 'Next.js', icon: 'vscode-icons:file-type-next'},
     {name: 'TailwindCSS', icon: 'vscode-icons:file-type-tailwind'},
-    {name: 'Shadcn/Ui', icon: 'simple-icons:shadcnui' },
+    {name: 'ShadcnUi', icon: 'simple-icons:shadcnui' },
     {name: 'Vite', icon: 'vscode-icons:file-type-vite'},
     {name: 'HTML', icon: 'skill-icons:html'},
     {name: 'CSS', icon: 'skill-icons:css'},
@@ -57,6 +57,24 @@ export const projects = [
         {name: 'Tailwind', icon: 'vscode-icons:file-type-tailwind'},
         {name: 'Ethers.js', icon: '/assets/Icon/ethersjs.png'},
         {name: 'Hardhat', icon: 'vscode-icons:file-type-hardhat'},
+    ]
+  },
+  {
+    title: "SilMark Tracker",
+    description: "A full-stack Next.js stock tracker where users can follow real-time prices, add markets to their watchlist, and get automatically notified by email whenever significant price changes occur.",
+    image: "/assets/Pictures/silmark.png",
+    liveLink: "https://sil-stock-tracker-app-c48v.vercel.app/",
+    githubLink: "https://github.com/ahBC-dev/SilStock-tracker-app",
+    icon: [
+        {name: 'Typescript', icon: 'skill-icons:typescript'},
+        {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
+        {name: 'MongoDB', icon: 'skill-icons:mongodb'},
+        {name: 'Node.js', icon: 'vscode-icons:file-type-node'},
+        {name: 'INNGEST', icon: '/assets/Icon/inngest.png'},
+        {name: 'BetterAuth', icon: '/assets/Icon/BetterAuth.png'},
+        {name: 'Nodemailer', icon: '/assets/Icon/nodemailer.png' },
+        {name: 'ShadcnUi', icon: 'simple-icons:shadcnui' },
+        {name: 'Next.js', icon: 'vscode-icons:file-type-next'},
     ]
   },
   {

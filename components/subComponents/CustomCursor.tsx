@@ -47,7 +47,7 @@ const CustomCursor = () => {
       
       {/* Background Blob Effect */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9997]"
+        className="pointer-events-none fixed top-0 left-0 z-[9997] hidden xl:block"
         animate={{
           x: position.x - 100,
           y: position.y - 100,
@@ -65,7 +65,7 @@ const CustomCursor = () => {
 
       {/* Main cursor - Your clean version */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference hidden xl:block"
         animate={{
           x: position.x - 8,
           y: position.y - 8,
@@ -89,7 +89,7 @@ const CustomCursor = () => {
 
       {/* Ring effect */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] mix-blend-difference hidden xl:block"
         animate={{
           x: position.x - 24,
           y: position.y - 24,
