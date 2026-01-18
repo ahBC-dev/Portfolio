@@ -51,7 +51,7 @@ export default function ThemeToggle() {
                 opacity: 0,
               }));
             }}
-            className="relative flex rounded-full border-2 border-black bg-white p-1"
+            className="relative flex rounded-full border-2 border-black bg-white/70 p-1"
           >
             <li
               ref={buttonRef}

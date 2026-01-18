@@ -45,30 +45,30 @@ const CustomCursor = () => {
         }
       `}</style>
       
-      {/* Background Blob Effect */}
+      {/* Background Blob Effect - Reduced for performance */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9997] hidden xl:block"
         animate={{
-          x: position.x - 100,
-          y: position.y - 100,
-          opacity: isHidden ? 0 : 0.1,
-          scale: isPointer ? 1.5 : 1
+          x: position.x - 60,
+          y: position.y - 60,
+          opacity: isHidden ? 0 : 0.04,
+          scale: isPointer ? 1.2 : 1
         }}
         transition={{ 
           type: "tween",
-          duration: 0.5,
+          duration: 0.3,
           ease: "easeOut"
         }}
       >
-        <div className="w-64 h-64 bg-gradient-to-r from-yellow-400 to-red-400 rounded-full blur-3xl cursor-blob" />
+        <div className="w-32 h-32 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-2xl cursor-blob" />
       </motion.div>
 
-      {/* Main cursor - Your clean version */}
+      {/* Main cursor dot */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference hidden xl:block"
         animate={{
-          x: position.x - 8,
-          y: position.y - 8,
+          x: position.x - 6,
+          y: position.y - 6,
           opacity: isHidden ? 0 : 1
         }}
         transition={{
@@ -78,31 +78,30 @@ const CustomCursor = () => {
         }}
       >
         <motion.div
-          className="w-4 h-4 bg-white rounded-full"
+          className="w-3 h-3 bg-white rounded-full"
           animate={{
-            scale: isPointer ? 1.5 : 1,
-            backgroundColor: isPointer ? '#facc15' : '#ffffff'
+            scale: isPointer ? 1.8 : 1,
           }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         />
       </motion.div>
 
       {/* Ring effect */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] mix-blend-difference hidden xl:block"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden xl:block"
         animate={{
-          x: position.x - 24,
-          y: position.y - 24,
-          opacity: isHidden ? 0 : 0.5,
-          scale: isPointer ? 1.3 : 1
+          x: position.x - 20,
+          y: position.y - 20,
+          opacity: isHidden ? 0 : 0.6,
+          scale: isPointer ? 1.5 : 1
         }}
         transition={{
           type: "tween",
-          duration: 0.15,
+          duration: 0.12,
           ease: "easeOut"
         }}
       >
-        <div className="w-12 h-12 border-2 border-white rounded-full" />
+        <div className="w-10 h-10 border border-[var(--accent)] rounded-full" />
       </motion.div>
     </>
   )

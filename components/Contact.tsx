@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "./I18nProvider";
 
 import { IoIosMail } from "react-icons/io";
 import { TbCopy } from "react-icons/tb";
@@ -7,14 +8,29 @@ import { FaLinkedin } from "react-icons/fa";
 import { BsClipboard2CheckFill } from "react-icons/bs";
 
 const Contact = () => {
+    const t = useTranslations()
     const [showMessage, setShowMessage] = useState(false)
 
-    const handleCopyEmail = () => {
-        navigator.clipboard.writeText('aahg@ahmadaljaziri.com')
-        setShowMessage(true)
-        setTimeout(() => {
-            setShowMessage(false)
-        }, 3000)
+    const handleCopyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText('aahg@ahmadaljaziri.com')
+            setShowMessage(true)
+            setTimeout(() => {
+                setShowMessage(false)
+            }, 3000)
+        } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea')
+            textArea.value = 'aahg@ahmadaljaziri.com'
+            document.body.appendChild(textArea)
+            textArea.select()
+            document.execCommand('copy')
+            document.body.removeChild(textArea)
+            setShowMessage(true)
+            setTimeout(() => {
+                setShowMessage(false)
+            }, 3000)
+        }
     }
 
     return (
@@ -27,10 +43,10 @@ const Contact = () => {
                 transition={{ duration: 0.6 }}
             >
                 <h1 className="text-4xl font-serif text-zinc-900 dark:text-neutral-100 font-bold mb-3 bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-neutral-100 dark:to-neutral-300 bg-clip-text text-transparent">
-                    CONTACT
+                    {t('contact.title') || 'CONTACT'}
                 </h1>
                 <p className="text-zinc-700 dark:text-neutral-300 text-lg font-sans font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    I'm always open to discussing new opportunities or sharing ideas — let's get in touch!
+                    {t('contact.description') || "I'm always open to discussing new opportunities or sharing ideas — let's get in touch!"}
                 </p>
             </motion.div>
 
@@ -57,7 +73,7 @@ const Contact = () => {
                         whileTap={{ scale: 0.95 }}
                     >
                         <TbCopy className="text-xl group-hover:scale-110 transition-transform duration-300" />
-                        Copy Email
+                        {t('contact.copyEmail') || 'Copy Email'}
                     </motion.button>
                 </div>
 
@@ -95,7 +111,7 @@ const Contact = () => {
             <AnimatePresence>
                 {showMessage && (
                     <motion.div 
-                        className="fixed bottom-6 right-6 bg-zinc-900 dark:bg-white text-neutral-100 dark:text-zinc-900 px-6 py-4 rounded-2xl shadow-2xl border border-white/10 dark:border-black/10 backdrop-blur-sm"
+                        className="fixed bottom-6 right-6 bg-zinc-900 dark:bg-white text-neutral-100 dark:text-zinc-900 px-6 py-4 rounded-2xl shadow-2xl border border-white/10 dark:border-black/10 backdrop-blur-sm z-[100]"
                         initial={{ opacity: 0, y: 50, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.8 }}
@@ -107,7 +123,7 @@ const Contact = () => {
                     >
                         <p className="font-sans font-semibold flex items-center gap-3 text-sm md:text-base">
                             <BsClipboard2CheckFill className="text-lg text-amber-400 dark:text-blue-400 flex-shrink-0" />
-                            Email copied to clipboard!
+                            {t('contact.emailCopied') || 'Email copied to clipboard!'}
                         </p>
                     </motion.div>
                 )}

@@ -5,24 +5,27 @@ import { SiFramer } from "react-icons/si";
 import clerkIcon from '@/assets/Icon/Clerk.png';
 
 export const NAV_ITEMS = [
+    {href: '#services', label: 'Services'},
     {href: '#about', label: 'About'},
-    {href: '#tech-stack', label: 'Tech Stack'},
+    {href: '#skills', label: 'Skills'},
     {href: '#projects', label:'Projects'},
     {href: '#contact', label:'Contact'}
 ];
 
 //tech stack section
 export const FRONTEND = [
-    {name: 'Javascript', icon: 'skill-icons:javascript'},
-    {name: 'Typescript', icon: 'skill-icons:typescript'},
+    {name: 'JavaScript', icon: 'skill-icons:javascript'},
+    {name: 'TypeScript', icon: 'skill-icons:typescript'},
     {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
+    {name: 'React Native', icon: 'skill-icons:react-dark'},
+    {name: 'Expo', icon: 'skill-icons:expo-dark'},
     {name: 'Next.js', icon: 'vscode-icons:file-type-next'},
     {name: 'TailwindCSS', icon: 'vscode-icons:file-type-tailwind'},
-    {name: 'ShadcnUi', icon: 'simple-icons:shadcnui' },
+    {name: 'Shadcn/UI', icon: 'simple-icons:shadcnui' },
     {name: 'Vite', icon: 'vscode-icons:file-type-vite'},
-    {name: 'HTML', icon: 'skill-icons:html'},
-    {name: 'CSS', icon: 'skill-icons:css'},
-    {name: 'Framer', icon: 'simple-icons:framer'},
+    {name: 'HTML5', icon: 'skill-icons:html'},
+    {name: 'CSS3', icon: 'skill-icons:css'},
+    {name: 'Framer Motion', icon: 'simple-icons:framer'},
     {name: 'Formik', icon: 'simple-icons:formik'}
 ];
 
@@ -30,28 +33,28 @@ export const BACKEND = [
     {name: 'MongoDB', icon: 'skill-icons:mongodb'},
     {name: 'Node.js', icon: 'vscode-icons:file-type-node'},
     {name: 'PostgreSQL', icon: 'vscode-icons:file-type-pgsql'},
-    {name: 'Express.js', icon: 'simple-icons:express'}
+    {name: 'Express.js', icon: 'skill-icons:expressjs-light'},
 ];
 
 export const OTHERS = [
-    {name: 'Docker', icon: 'vscode-icons:file-type-docker' },
     {name: 'Better Auth', icon: '/assets/Icon/BetterAuth.png' },
     {name: 'Clerk', icon: '/assets/Icon/Clerk.png' },
     {name: 'Stripe', icon: '/assets/Icon/Stripe.png' },
     {name: 'Vercel', icon: 'simple-icons:vercel' },
     {name: 'Git', icon: 'vscode-icons:file-type-git' },
+    {name: 'GitHub', icon: 'skill-icons:github-dark' },
 ];
 
 //projects section
 export const projects = [
     {
     title: "Silversed",
-    description: "A simple dApp for testing Ethereum transactions and displaying blockchain data.",
+    description: "A decentralized application (dApp) for executing Ethereum transactions and visualizing blockchain data in real-time. Features wallet integration, smart contract interaction, and a clean modern interface.",
     image: "/assets/Pictures/silversed.png",
     liveLink: "https://silversed.netlify.app/",
     githubLink: "https://github.com/ahBC-dev/Shilverado",
     icon: [
-        {name: 'Javascript', icon: 'skill-icons:javascript'},
+        {name: 'JavaScript', icon: 'skill-icons:javascript'},
         {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
         {name: 'Vite', icon: 'vscode-icons:file-type-vite'},
         {name: 'Tailwind', icon: 'vscode-icons:file-type-tailwind'},
@@ -61,30 +64,30 @@ export const projects = [
   },
   {
     title: "SilMark Tracker",
-    description: "A full-stack Next.js stock tracker where users can follow real-time prices, add markets to their watchlist, and get automatically notified by email whenever significant price changes occur.",
+    description: "A comprehensive full-stack stock tracking platform built with Next.js. Features real-time price monitoring, personalized watchlists, and automated email notifications for significant price movements using INNGEST.",
     image: "/assets/Pictures/silmark.png",
     liveLink: "https://sil-stock-tracker-app-c48v.vercel.app/",
     githubLink: "https://github.com/ahBC-dev/SilStock-tracker-app",
     icon: [
-        {name: 'Typescript', icon: 'skill-icons:typescript'},
+        {name: 'TypeScript', icon: 'skill-icons:typescript'},
         {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
         {name: 'MongoDB', icon: 'skill-icons:mongodb'},
         {name: 'Node.js', icon: 'vscode-icons:file-type-node'},
         {name: 'INNGEST', icon: '/assets/Icon/inngest.png'},
         {name: 'BetterAuth', icon: '/assets/Icon/BetterAuth.png'},
         {name: 'Nodemailer', icon: '/assets/Icon/nodemailer.png' },
-        {name: 'ShadcnUi', icon: 'simple-icons:shadcnui' },
+        {name: 'Shadcn/UI', icon: 'simple-icons:shadcnui' },
         {name: 'Next.js', icon: 'vscode-icons:file-type-next'},
     ]
   },
   {
-    title: "Portfolio",
-    description: "My first React project ever, Simple to no-complexty at all project",
+    title: "Portfolio v1",
+    description: "My first venture into React development — a clean, minimalist portfolio showcasing the foundations of component-based architecture and responsive design principles.",
     image: "/assets/Pictures/portfolio.png",
     liveLink: "https://first-portfolio-hmad.netlify.app/",
     githubLink: "https://github.com/your-portfolio",
     icon: [
-        {name: 'Javascript', icon: 'skill-icons:javascript'},
+        {name: 'JavaScript', icon: 'skill-icons:javascript'},
         {name: 'React', icon: 'vscode-icons:file-type-reactjs'},
         {name: 'Tailwind', icon: 'vscode-icons:file-type-tailwind'},
         {name: 'ChakraUI', icon: '/assets/Icon/chakra-ui.png'},

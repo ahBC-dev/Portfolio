@@ -1,35 +1,26 @@
-import { projects } from "@/lib/constants"
-import ProjectCard from "./subComponents/ProjectsCard"
-
-import {motion} from 'framer-motion'
 
 
-const Projects = () => {
+import ProjectCard from "./subComponents/ProjectsCard";
+import Reveal from "./motion/Reveal";
+import { projects } from "../lib/constants";
 
-    
-
-  return (
-    <div className="container flex flex-col p-3 gap-5  z-10">
-        <div className="text-center lg:text-start">
-            <h1 className="text-3xl font-serif font-bold text-zinc-900 dark:text-neutral-100">
-                PROJECTS
-            </h1>
-        </div>
-        <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.1 } }
-        }}
-        className="flex flex-col justify-center items-center md:flex-row md:flex-wrap lg:justify-start gap-5"
-        >
-            {projects.map((project) => (
-                <ProjectCard key={project.title} {...project}/>
-            ))}
-        </motion.div>
-    </div>
-  )
+export default function Projects() {
+    return (
+        <section id="projects" className="w-full py-24 ">
+            <div className="container mx-auto px-4">
+                <Reveal>
+                    <h2 className="text-4xl md:text-5xl font-bold heading-font mb-8 text-zinc-900 dark:text-neutral-100 text-center">
+                        Projects
+                    </h2>
+                </Reveal>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
+                    {projects.map((project, idx) => (
+                        <Reveal key={project.title} delay={idx * 0.1}>
+                            <ProjectCard {...project} priority={idx === 0} />
+                        </Reveal>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
-
-export default Projects

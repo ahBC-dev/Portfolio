@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "techStack": "Tech Stack",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "name": "Ahmad ",
+    "role": "Full Stack Developer",
+    "description": "Crafting exceptional digital experiences with modern technologies",
+    "cta": "Get in touch",
+    "availability": "Available for opportunities",
+    "location": "UAE",
+    "downloadResume": "Download Resume",
+    "getInTouch": "Get in Touch"
+  },
+  "services": {
+    "sectionTag": "What I Do",
+    "title": "I Build Digital Solutions",
+    "description": "From concept to deployment, I create full stack websites, mobile applications, and everything in between to bring your ideas to life.",
+    "webTitle": "Full Stack Websites",
+    "webDesc": "End-to-end web applications with modern frameworks, robust backends, and seamless user experiences that drive business growth.",
+    "mobileTitle": "Mobile Applications",
+    "mobileDesc": "Cross-platform mobile apps with React Native & Expo, delivering native performance and beautiful interfaces for iOS and Android.",
+    "apiTitle": "API Development",
+    "apiDesc": "RESTful APIs and backend services with Node.js, ensuring secure, scalable, and well-documented integrations."
+  },
+  "about": {
+    "sectionTag": "About Me",
+    "title": "Passionate Developer & Problem Solver",
+    "description": "I'm a passionate Full Stack Developer with expertise in building modern web applications. I love creating seamless user experiences and solving complex problems with clean, efficient code.",
+    "paragraph1": "I'm a full stack developer based in the United Arab Emirates with a passion for creating seamless digital experiences. My journey in development started with curiosity and has evolved into a deep expertise in modern web technologies.",
+    "paragraph2": "I specialize in building end-to-end applications using React, Next.js, Node.js, and various databases. I believe in writing clean, maintainable code that not only works but scales.",
+    "paragraph3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or helping fellow developers on Stack Overflow.",
+    "available": "Available for work",
+    "location": "United Arab Emirates"
+  },
+  "projects": {
+    "sectionTag": "Portfolio",
+    "title": "Featured Projects",
+    "description": "A selection of projects that showcase my skills and passion for building great products.",
+    "viewProject": "View Project",
+    "sourceCode": "Source Code",
+    "moreTech": "more"
+  },
+  "skills": {
+    "sectionTag": "Tech Stack",
+    "title": "Tools of the Trade",
+    "description": "A curated collection of technologies I use to build exceptional digital products.",
+    "frontend": "Frontend",
+    "frontendDesc": "React, Next.js, TypeScript, Tailwind CSS, Framer Motion",
+    "backend": "Backend",
+    "backendDesc": "Node.js, MongoDB, PostgreSQL, REST APIs",
+    "tools": "Tools",
+    "toolsDesc": "Docker, Git, Vercel, Stripe, Authentication"
+  },
+  "contact": {
+    "sectionTag": "Get in Touch",
+    "title": "Let's Work Together",
+    "description": "Have a project in mind or just want to chat? I'm always open to discussing new opportunities and ideas.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again.",
+    "copyEmail": "Copy Email",
+    "emailCopied": "Email copied to clipboard!",
+    "footer": "Ahmad Hosseini."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "contact": "Get in Touch",
+    "connectWith": "Connect with me",
+    "language": "Language",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  }
+}

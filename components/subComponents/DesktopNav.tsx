@@ -2,7 +2,7 @@
 
 import { NAV_ITEMS } from "@/lib/constants";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const DesktopNav = () => {
@@ -12,6 +12,48 @@ const DesktopNav = () => {
     opacity: 0,
   });
   const [activeIndex, setActiveIndex] = useState(-1);
+  const tabsRef = useRef<Array<HTMLLIElement | null>>([]);
+
+  // when activeIndex changes (due to scroll or hover), update the cursor position
+  useEffect(() => {
+    if (activeIndex === -1) {
+      setPosition((p) => ({ ...p, opacity: 0 }));
+      return;
+    }
+
+    const el = tabsRef.current[activeIndex];
+    if (!el) return;
+    const { width } = el.getBoundingClientRect();
+    setPosition({ left: el.offsetLeft, width, opacity: 1 });
+  }, [activeIndex]);
+
+  // Scrollspy: observe sections and update activeIndex
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const observers: IntersectionObserver[] = [];
+    const options = { root: null, rootMargin: '0px', threshold: 0.45 };
+
+    NAV_ITEMS.forEach(({ href }, index) => {
+      const id = href && href.startsWith('#') ? href.substring(1) : null;
+      if (!id) return;
+      const section = document.getElementById(id);
+      if (!section) return;
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveIndex(index);
+          }
+        });
+      }, options);
+
+      obs.observe(section);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
     <div className="hidden md:flex items-center justify-center w-full">
@@ -33,6 +75,7 @@ const DesktopNav = () => {
             index={index}
             setActiveIndex={setActiveIndex}
             isActive={activeIndex === index}
+            registerRef={(el: HTMLLIElement | null) => (tabsRef.current[index] = el)}
           >
             {label}
           </Tab>
@@ -50,14 +93,15 @@ interface TabProps {
   index?: number;
   setActiveIndex?: any;
   isActive?: boolean;
+  registerRef?: (el: HTMLLIElement | null) => void;
 }
 
-const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive }: TabProps) => {
-  const ref = useRef<HTMLLIElement>(null);
+const Tab = ({ children, href, setPosition, index, setActiveIndex, isActive, registerRef }: TabProps) => {
+  const ref = useRef<HTMLLIElement | null>(null);
 
   return (
     <li
-      ref={ref}
+      ref={(el) => { ref.current = el; registerRef && registerRef(el); }}
       className="relative z-10"
     >
       <Link
