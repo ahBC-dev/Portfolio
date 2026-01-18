@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk, Syne } from 'next/font/google';
+import { Inter, Space_Grotesk, Syne, Cairo, Changa } from 'next/font/google';
 import './globals.css';
 import CustomCursor from '@/components/subComponents/CustomCursor';
 import { Analytics } from '@vercel/analytics/next';
@@ -20,6 +20,16 @@ const spaceGrotesk = Space_Grotesk({
 const syne = Syne({
   variable: '--font-syne',
   subsets: ['latin'],
+});
+
+const cairo = Cairo({
+  variable: '--font-cairo',
+  subsets: ['arabic'],
+});
+
+const changa = Changa({
+  variable: '--font-changa',
+  subsets: ['arabic'],
 });
 
 export function generateStaticParams() {
@@ -76,7 +86,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${syne.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${syne.variable} ${cairo.variable} ${changa.variable} antialiased`}
       >
         <I18nProvider locale={locale as Locale} messages={messages}>
           <Analytics />
