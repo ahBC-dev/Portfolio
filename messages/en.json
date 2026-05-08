@@ -10,12 +10,10 @@
   },
   "hero": {
     "greeting": "Hey, I'm",
-    "name": "Ahmad ",
-    "role": "Full Stack Developer",
-    "description": "Crafting exceptional digital experiences with modern technologies",
+    "name": "Ahmad",
+    "role": "I build software",
+    "tagline": "From simple apps to robust cross-platform systems — engineered with precision.",
     "cta": "Get in touch",
-    "availability": "Available for opportunities",
-    "location": "UAE",
     "downloadResume": "Download Resume",
     "getInTouch": "Get in Touch"
   },
@@ -34,11 +32,12 @@
     "sectionTag": "About Me",
     "title": "Passionate Developer & Problem Solver",
     "description": "I'm a passionate Full Stack Developer with expertise in building modern web applications. I love creating seamless user experiences and solving complex problems with clean, efficient code.",
-    "paragraph1": "I'm a full stack developer based in the United Arab Emirates with a passion for creating seamless digital experiences. My journey in development started with curiosity and has evolved into a deep expertise in modern web technologies.",
+    "paragraph1": "I'm a full stack developer with a passion for creating seamless digital experiences. My journey in development started with curiosity and has evolved into a deep expertise in modern web technologies.",
     "paragraph2": "I specialize in building end-to-end applications using React, Next.js, Node.js, and various databases. I believe in writing clean, maintainable code that not only works but scales.",
     "paragraph3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or helping fellow developers on Stack Overflow.",
-    "available": "Available for work",
-    "location": "United Arab Emirates"
+    "yearsExp": "Years of Experience",
+    "projectsDone": "Projects Completed",
+    "techUsed": "Technologies Used"
   },
   "projects": {
     "sectionTag": "Portfolio",
@@ -72,7 +71,8 @@
     "error": "Failed to send message. Please try again.",
     "copyEmail": "Copy Email",
     "emailCopied": "Email copied to clipboard!",
-    "footer": "Ahmad Hosseini."
+    "footer": "Ahmad Hosseini.",
+    "orConnect": "Or connect with me on"
   },
   "common": {
     "loading": "Loading...",

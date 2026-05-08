@@ -53,7 +53,7 @@ export async function generateMetadata({
       'React Developer',
       'Next.js',
       'Web Developer',
-      'UAE',
+      'Software Engineer',
       'Frontend',
       'Backend',
       'JavaScript',
